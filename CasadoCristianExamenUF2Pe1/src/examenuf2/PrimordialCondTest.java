@@ -5,7 +5,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-public class PrimordialExcpTest {
+public class PrimordialCondTest {
 	Primordial primordial;
 
 	@Before
@@ -13,9 +13,19 @@ public class PrimordialExcpTest {
 		primordial = new Primordial();
 	}	
 
-	@Test (expected = IllegalArgumentException.class)
+	@Test
 	public void test() {
-		Assert.assertEquals(30.0, primordial.get_primordial(-5), 0.03);
+		Assert.assertTrue((primordial.get_primordial(8))>200);
+	}
+
+	@Test
+	public void test2() {
+		Assert.assertFalse((primordial.get_primordial(6))>30);
+	}
+
+	@Test
+	public void test3() {
+		Assert.assertTrue((primordial.get_primordial(2))<=2);
 	}
 
 	@After
